@@ -1,0 +1,900 @@
+{
+	"info": {
+		"_postman_id": "79a86035-0e3e-4b17-a8b4-cd45ff0fd465",
+		"name": "api_manual_test",
+		"schema": "https://schema.getpostman.com/json/collection/v2.0.0/collection.json",
+		"_exporter_id": "31828908"
+	},
+	"item": [
+		{
+			"name": "register",
+			"item": [
+				{
+					"name": "invalid_reg_req_field_empty",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"\",\r\n  \"last_name\": \"\",\r\n  \"email\": \"pratimashr62+4343@gmail.com\",\r\n  \"password\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-cms.unplug.app/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid_email_format",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Pratima\",\r\n  \"last_name\": \"Shrestha\",\r\n  \"email\": \"pratimashr62+4343\",\r\n  \"password\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-cms.unplug.app/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Already_registered_email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"Pratima\",\r\n  \"last_name\": \"Shrestha\",\r\n  \"email\": \"pratimashr62+4343@gmail.com\",\r\n  \"password\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-cms.unplug.app/api/auth/register"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Login",
+			"item": [
+				{
+					"name": "Incorrect_password",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pratimashr62+1234@gmail.com\",\r\n  \"password\": \"admin12\",\r\n  \"client_id\": \"NDSFQOLVNN8dd5343cc82721e2038a\",\r\n  \"grant_type\": \"password\",\r\n  \"client_secret\": \"HRMDODNKWAIFJHGMPUAITPPMOLJXVPTPAECDLJYUEETUFQDULNAJVQLCSGLIEWRJ9db7e00cbb4077eaa622\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid_email",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pratimashr62+1234@gmail.com\",\r\n  \"password\": \"admin123456\",\r\n  \"client_id\": \"NDSFQOLVNN8dd5343cc82721e2038a\",\r\n  \"grant_type\": \"password\",\r\n  \"client_secret\": \"HRMDODNKWAIFJHGMPUAITPPMOLJXVPTPAECDLJYUEETUFQDULNAJVQLCSGLIEWRJ9db7e00cbb4077eaa622\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Required_field_empty",
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"pratimashr62+1234@gmail.com\",\r\n  \"password\": \"admin123456\",\r\n  \"client_id\": \"NDSFQOLVNN8dd5343cc82721e2038a\",\r\n  \"grant_type\": \"password\",\r\n  \"client_secret\": \"HRMDODNKWAIFJHGMPUAITPPMOLJXVPTPAECDLJYUEETUFQDULNAJVQLCSGLIEWRJ9db7e00cbb4077eaa622\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/auth/login"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Get_profile",
+			"item": [
+				{
+					"name": "Profile_invalidAuth",
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer dSSS23e6acMbUHTKFLmTAl2LkKYxLiZhYVVqHmUA",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-cms.unplug.app/api/v1/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Password_change",
+			"item": [
+				{
+					"name": "Invalid_oldpassword",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\" : \"admin123\",\r\n    \"new_password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-password"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Email_change",
+			"item": [
+				{
+					"name": "Email_change_invalid_password",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_email\":\"pratimashr62+1234@gmail.com\",\r\n    \"email\":\"pratimashr62+567@gmail.com\",\r\n    \"password\":\"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-email"
+					},
+					"response": []
+				},
+				{
+					"name": "Already_exists_newemail",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_email\":\"pratimashr62+6767@gmail.com\",\r\n    \"email\":\"pratimashr62+1234@gmail.com\",\r\n    \"password\":\"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-email"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid_email_format",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_email\":\"pratimashr62+6767@gmail.com\",\r\n    \"email\":\"pratimashr62+12\",\r\n    \"password\":\"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-email"
+					},
+					"response": []
+				},
+				{
+					"name": "Old_email_mismatch",
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_email\":\"pratimashr62+6767@gmail.com\",\r\n    \"email\":\"pratimashr62+12\",\r\n    \"password\":\"admin123456\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-email"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Update",
+			"item": [
+				{
+					"name": "Invalid_DOB",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" : \"pratima123\",\r\n    \"last_name\" :\"stha\",\r\n    \"contactnumber\" : \"9807677898\",\r\n    \"goal\": 30,\r\n    \"about\": \"ntg\",\r\n    \"location\":\"lamachaur\",\r\n    \"reminder_status\":true,\r\n    \"reminder_time\":\"asdfsadf\",\r\n    \"reminder_message\":\"asdfasdf\",\r\n    \"user_feelings\": [1,2],\r\n    \"nickname\":\"qwertyuiop\",\r\n    \"dob\":\"89/29/1999\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Invalid_Contact_no",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" : \"pratima123\",\r\n    \"last_name\" :\"stha\",\r\n    \"contactnumber\" : \"98076778987880876545678\",\r\n    \"goal\": 30,\r\n    \"about\": \"ntg\",\r\n    \"location\":\"lamachaur\",\r\n    \"reminder_status\":true,\r\n    \"reminder_time\":\"asdfsadf\",\r\n    \"reminder_message\":\"asdfasdf\",\r\n    \"user_feelings\": [1,2],\r\n    \"nickname\":\"qwertyuiop\",\r\n    \"dob\":\"3/12/1999\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Matching_password",
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\" : \"admin123\",\r\n    \"new_password\" : \"admin123\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-password"
+					},
+					"response": []
+				},
+				{
+					"name": "Leaving_req_field_empty",
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" : \"pratima123\",\r\n    \"last_name\" :\"stha\",\r\n    \"contactnumber\" : \"98076856567\",\r\n    \"goal\": 30,\r\n    \"about\": \"\",\r\n    \"location\":\"\",\r\n    \"reminder_status\":true,\r\n    \"reminder_time\":\"\",\r\n    \"reminder_message\":\"\",\r\n    \"user_feelings\": [],\r\n    \"nickname\":\"\",\r\n    \"dob\":\"\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/profile"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Logout",
+			"item": [
+				{
+					"name": "Unauthorized_logout",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer ox5cnTX4LEIO1SPN6QPHwD1jITpQPtub4x64b7QE",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/logout"
+					},
+					"response": []
+				}
+			]
+		},
+		{
+			"name": "Valid",
+			"item": [
+				{
+					"name": "Register_valid_details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var reBody = JSON.parse(request.data);\r",
+									"\r",
+									"console.log(reBody)\r",
+									"pm.environment.set(\"email\",reBody.email);\r",
+									"pm.environment.set(\"password\",reBody.password);\r",
+									"\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"pm.environment.set(\"FIRST_NAME\", \"reBody.first_name\");\r",
+									"pm.environment.unset(\"FIRST_NAME\");"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set('fname', pm.variables.replaceIn('{{$randomFirstName}}'));\r",
+									"pm.environment.set('lname', pm.variables.replaceIn('{{$randomFirstName}}'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "QPJXSSTLEW5b86c0e50d2ef645bc3c",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"first_name\": \"{{fname}}\",\r\n  \"last_name\": \"{{lname}}\",\r\n  \"email\": \"{{fname}}@gmail.com\",\r\n  \"password\": \"admin1234\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "https://dev-cms.unplug.app/api/auth/register"
+					},
+					"response": []
+				},
+				{
+					"name": "Login_with_valid_details",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(jsonData)\r",
+									"pm.environment.set(\"TOKEN\", jsonData.access_token);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});\r",
+									"\r",
+									"//var jsonData = JSON.parse(responseBody);\r",
+									"pm.test(\"Your test name\", function () {\r",
+									"    var jsonData = pm.response.json();\r",
+									"    pm.expect(jsonData.token_type).to.eql(\"Bearer\");\r",
+									"});\r",
+									"\r",
+									"\r",
+									"\r",
+									"\r",
+									""
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\",\r\n  \"client_id\": \"NDSFQOLVNN8dd5343cc82721e2038a\",\r\n  \"grant_type\": \"password\",\r\n  \"client_secret\": \"HRMDODNKWAIFJHGMPUAITPPMOLJXVPTPAECDLJYUEETUFQDULNAJVQLCSGLIEWRJ9db7e00cbb4077eaa622\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Password Change",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var reBody = JSON.parse(request.data);\r",
+									"console.log(reBody)\r",
+									"\r",
+									"pm.environment.set(\"password\",reBody.new_password);\r",
+									"\r",
+									"\r",
+									"var jsonData = JSON.parse(responseBody);\r",
+									"pm.test(\"Response body contains Password updated successfully\", function () {\r",
+									"\r",
+									"    pm.expect(jsonData.data.message).to.include(\"Password updated successfully\");\r",
+									"});\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disabledSystemHeaders": {}
+					},
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_password\" : \"{{password}}\",\r\n    \"new_password\" : \"admin45\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-password"
+					},
+					"response": []
+				},
+				{
+					"name": "Email_change",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var reBody = JSON.parse(request.data);\r",
+									"console.log(reBody)\r",
+									"\r",
+									"pm.environment.set(\"email\",reBody.email);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						},
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"fname\", pm.variables.replaceIn('{{$randomFirstName}}'));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PUT",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"old_email\":\"{{email}}\",\r\n    \"email\":\"{{fname}}@gmail.com\",\r\n    \"password\":\"{{password}}\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/change-email"
+					},
+					"response": []
+				},
+				{
+					"name": "Profile_valid_Auth",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(jsonData)\r",
+									"pm.environment.set(\"ID\", jsonData.data.id);\r",
+									"\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"protocolProfileBehavior": {
+						"disableBodyPruning": true
+					},
+					"request": {
+						"method": "GET",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Update profile Sucessfully",
+					"event": [
+						{
+							"listen": "prerequest",
+							"script": {
+								"exec": [
+									"pm.environment.set(\"fname\", \"{{$randomFirstName}}\");\r",
+									"pm.environment.set(\"lname\", \"{{$randomLastName}}\");\r",
+									"pm.environment.set(\"mobile_no\", Math.floor(Math.random() *99999999999));"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "PATCH",
+						"header": [
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							},
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n    \"first_name\" : \"{{fname}}\",\r\n    \"last_name\" :\"{{lname}}\",\r\n    \"contactnumber\" : \"{{mobile_no}}\",\r\n    \"goal\": 30,\r\n    \"about\": \"ntg\",\r\n    \"location\":\"lamachaur\",\r\n    \"reminder_status\":true,\r\n    \"reminder_time\":\"asdfsadf\",\r\n    \"reminder_message\":\"asdfasdf\",\r\n    \"user_feelings\": [1,2],\r\n    \"nickname\":\"qwertyuiop\",\r\n    \"dob\":\"3/12/1999\"\r\n    }",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/profile"
+					},
+					"response": []
+				},
+				{
+					"name": "Login_with_valid_details Copy",
+					"event": [
+						{
+							"listen": "test",
+							"script": {
+								"exec": [
+									"var jsonData = JSON.parse(responseBody);\r",
+									"console.log(jsonData)\r",
+									"pm.environment.set(\"TOKEN\", jsonData.access_token);\r",
+									"pm.test(\"Status code is 200\", function () {\r",
+									"    pm.response.to.have.status(200);\r",
+									"});"
+								],
+								"type": "text/javascript"
+							}
+						}
+					],
+					"request": {
+						"method": "POST",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "{\r\n  \"email\": \"{{email}}\",\r\n  \"password\": \"{{password}}\",\r\n  \"client_id\": \"NDSFQOLVNN8dd5343cc82721e2038a\",\r\n  \"grant_type\": \"password\",\r\n  \"client_secret\": \"HRMDODNKWAIFJHGMPUAITPPMOLJXVPTPAECDLJYUEETUFQDULNAJVQLCSGLIEWRJ9db7e00cbb4077eaa622\"\r\n}",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/auth/login"
+					},
+					"response": []
+				},
+				{
+					"name": "Logout_successfully",
+					"request": {
+						"method": "DELETE",
+						"header": [
+							{
+								"key": "api-key",
+								"value": "{{API-KEY}}",
+								"type": "text"
+							},
+							{
+								"key": "Authorization",
+								"value": "Bearer {{TOKEN}}",
+								"type": "text"
+							}
+						],
+						"body": {
+							"mode": "raw",
+							"raw": "",
+							"options": {
+								"raw": {
+									"language": "json"
+								}
+							}
+						},
+						"url": "{{BASE_URL}}/api/v1/logout"
+					},
+					"response": []
+				}
+			]
+		}
+	]
+}
